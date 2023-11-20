@@ -22,3 +22,5 @@ matplotlib.pyplot.show()
 # テストコメント
 # GitHubの動作テスト
 print('Hello GitHub!')
+
+# This is written after chenge of local place to save Files.
