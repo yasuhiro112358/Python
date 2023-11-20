@@ -1,0 +1,6 @@
+print('I am a student.\nI\'m a student.')
+input()
+print('To be honest, I\'m not a student.')
+input()
+print('I am a ', end = "")
+print('hero!')
