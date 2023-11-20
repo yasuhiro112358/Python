@@ -19,3 +19,5 @@ matplotlib.pyplot.xlabel('Time [sec]')
 matplotlib.pyplot.ylabel('Amplitude')
 matplotlib.pyplot.show()
 
+# テストコメント
+# GitHubの動作テスト
