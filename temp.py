@@ -21,3 +21,4 @@ matplotlib.pyplot.show()
 
 # テストコメント
 # GitHubの動作テスト
+print('Hello GitHub!')
