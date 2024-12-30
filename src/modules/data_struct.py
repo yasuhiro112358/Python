@@ -160,6 +160,12 @@ def practice_10():
     for index, price in enumerate(prices):
         print(f"{index}: {price *1.1:.2f}")
 
+def practice_11():
+    print("practice_11")
+
+    prices = [100, 200, 150, 200, 100] 
+    prices_with_tax = [price * 1.1 for price in prices] # リスト内包表記
+    print(prices_with_tax)
 
 def run():
     print("data_struct.py")
@@ -167,7 +173,8 @@ def run():
     # practice_06()
     # practice_07()
     # practice_08()
-    practice_10()
+    # practice_10()
+    practice_11()
 
 
 if __name__ == "__main__":
