@@ -1,5 +1,7 @@
 import random
-
+import math
+from math import pi as PI
+from math import e as E
 
 def practice_02():
     print("practice_02")
@@ -33,18 +35,58 @@ def practice_03():
 def practice_04():
     print("practice_04")
 
+    print(PI) # 円周率
+    print(E) # ネイピア数
+    print(math.sin(PI / 2)) # 1.0
+    print(math.cos(PI)) # -1.0
+    print(math.tan(PI / 4)) # 1.0
+    print(math.sqrt(2)) # 1.4142135623730951
+    print(math.log(2)) # 0.6931471805599453
+    print(math.log(8, 2)) # 3.0
+    print(math.exp(2)) # 7.3890560989306495
+    print(math.pow(2, 3)) # 8.0
+    # 数直線上で大きい方の整数を返す
+    print(math.ceil(3.2)) # 4
+    print(math.ceil(-3.2)) # -3
+    # 数直線上で小さい方の整数を返す
+    print(math.floor(3.2)) # 3
+    print(math.floor(-3.2)) # -4
+    # 数直線上で0に近い方の整数を返す（よく言われる切り捨て）
+    print(math.trunc(3.2)) # 3
+    print(math.trunc(-3.2)) # -3
+    print(math.fabs(-3.2)) # 3.2
+    print(math.modf(3.2)) # (0.20000000000000018, 3.0)
+    print(math.fmod(3, 2)) # 1.0
+    print(math.fmod(-3, 2)) # -1.0
+    print(math.remainder(3, 2)) # -1.0
+    print(math.remainder(-3, 2)) # 1.0
+    # GCD (Greatest Common Divider): 最大公約数
+    print(math.gcd(12, 18)) # 6
+    # LCM (Least Common Multiple): 最小公倍数
+    print(math.lcm(12, 18)) # 36
+    
+    # 要注意：round()は四捨五入ではなく、偶数への丸めを行う
+    print(round(3.5)) # 4
+    print(round(2.5)) # 2
 
+    # 0.1 * 3 は 0.3 にならない（誤差）
+    print(0.1 * 3 == 0.3) # False
+    # math.isclose()を使うと誤差を考慮して比較できる（デフォルトでは1e-09）
+    print(math.isclose(0.1 * 3, 0.3)) # True
 
+def practice_06():
+    print("practice_06")
 
+    
 
 def run():
     print("std_lib.py")
 
     # practice_02()
     # practice_03()
-    practice_04()
+    # practice_04()
+    practice_06()
 
-    # practice_06()
     # practice_07()
     # practice_08()
     # practice_10()
