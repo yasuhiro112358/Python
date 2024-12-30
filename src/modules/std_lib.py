@@ -2,6 +2,8 @@ import random
 import math
 from math import pi as PI
 from math import e as E
+import datetime
+import calendar
 
 def practice_02():
     print("practice_02")
@@ -77,7 +79,51 @@ def practice_04():
 def practice_06():
     print("practice_06")
 
-    
+    now = datetime.datetime.now()
+    print(now) 
+    print(now.year)
+    print(now.month)
+    print(now.day)
+    print(now.hour)
+    print(now.minute)
+    print(now.second)
+    print(now.microsecond)
+    print(now.weekday()) # 0: 月曜日, 1: 火曜日, 2: 水曜日, 3: 木曜日, 4: 金曜日, 5: 土曜日, 6: 日曜日
+    now_formatted = now.strftime("%B %d %A, %Y")
+    print(now_formatted)
+
+    birthday = datetime.datetime(1989, 5, 8)
+    print(birthday)
+
+    birthday = datetime.datetime.strptime("1989-05-08", "%Y-%m-%d")
+    print(birthday)
+
+def practice_08():
+    print("practice_08")
+
+    day1 = datetime.datetime(year=2000, month=4, day=11)
+    day2 = datetime.datetime(year=2001, month=1, day=1)
+    diff = day2 - day1 # timedelta
+    diff_days = diff.days
+    print(diff_days)
+
+    delta = datetime.timedelta(days=3, hours=5) # timedelta
+    day3 = day1 + delta
+    print(day3)
+
+def practice_09():
+    print("practice_09")
+
+    calendar.setfirstweekday(calendar.SUNDAY)
+    cal_str = calendar.month(2001, 1)
+    print(cal_str)
+
+    cal_data = calendar.monthcalendar(2001, 1)
+    print(cal_data)
+
+    # 2000年は閏年
+    print(calendar.isleap(2000)) # True
+    print(calendar.isleap(2001)) # False
 
 def run():
     print("std_lib.py")
@@ -85,10 +131,11 @@ def run():
     # practice_02()
     # practice_03()
     # practice_04()
-    practice_06()
-
-    # practice_07()
+    # practice_06()
     # practice_08()
+    practice_09()
+
+
     # practice_10()
     # practice_11()
     # practice_12()
