@@ -181,6 +181,111 @@ def practice_12():
 
     print(prices_with_tax)
 
+def practice_13():
+    print("practice_13")
+
+    tokyo = ("JPY", 36, 140)
+    print(tokyo)
+    print(tokyo[0])
+
+    tokyo = list(tokyo)
+    print(tokyo)
+    tokyo[0] = "YEN"
+    print(tokyo)
+    tokyo = tuple(tokyo)
+    print(tokyo)
+
+    tokyo = ("JPY", 36, 140)
+    currency, lat, lng = tokyo
+    print(currency)
+    print(lat)
+    print(lng)
+
+    tokyo = ("JPY", 36, 140)
+    currency, *coords = tokyo
+    print(currency)
+    print(coords)
+
+    tokyo = ("JPY", 36, 140)
+    _, lat, lng = tokyo
+    print(lat)
+    print(lng)
+
+    tokyo = ("JPY", 36, 140)
+    currency, *_ = tokyo
+    print(currency)
+
+def practice_15():
+    print("practice_15")
+
+    # シーケンス型
+    scores = [10, 20, 30, 20, 40]
+    tokyo = ("JPY", 36, 140)
+    name = "Taro Yamada" # タプルと同様に要素の変更はできない
+
+    print(name[0])
+    print(name[:4])
+
+    replaced_string = name.replace("Taro", "Jiro") # 非破壊
+    upper_string = name.upper() # 非破壊
+    print(replaced_string)
+    print(upper_string)
+    print(name)
+
+    birthday = "1989-05-08"
+    print(birthday.split("-")) # ['1989', '05', '08']
+
+    year, month, day = birthday.split("-")
+    print(year)
+    print(month)
+    print(day)
+
+    birthday2 = ["1992", "02", "29"]
+    # joinメソッドは文字列にしか使えない
+    print("-".join(birthday2)) # 1992-02-29
+
+    birthday3 = [1992, 2, 29]
+    print("-".join([str(n) for n in birthday3])) # 1992-2-29
+
+def practice_17():
+    print("practice_17")
+
+    scores = {"math": 62, "english": 91, "physics": 84}
+    scores["math"] = 100
+    scores["history"] = 88
+
+    del scores["physics"]
+
+    popped_item = scores.pop("english")
+
+    print(scores)
+    print(scores["math"])
+
+    print(popped_item)
+
+def practice_18():
+    print("practice_18")
+
+    scores = {"math": 62, "english": 91, "physics": 84}
+
+    for key in scores.keys():
+        print(key)
+
+    for value in scores.values():
+        print(value)
+
+    for item in scores.items():
+        print(item)
+        key, value = item
+        print(f"{key:8} {value:3}")
+
+    for key, value in scores.items():
+        print(f"{key:8} {value:3}")
+
+def practice_19():
+    print("practice_19")
+
+
 
 def run():
     print("data_struct.py")
@@ -190,7 +295,12 @@ def run():
     # practice_08()
     # practice_10()
     # practice_11()
-    practice_12()
+    # practice_12()
+    # practice_13()
+    # practice_15()
+    # practice_17()
+    # practice_18()
+    practice_19()
 
 
 if __name__ == "__main__":
