@@ -94,16 +94,81 @@ def practice_07():
     print("practice_07")
 
     scores = [10, 20, 30, 20, 40]
-    
-    scores.reverse()
+
+    scores.reverse() # 破壊的
     print(scores) # [40, 20, 30, 20, 10]
 
-    
+    scores.sort() # 破壊的
+    print(scores) # [10, 20, 20, 30, 40]
+
+    scores.sort(reverse=True) # 破壊的
+    print(scores) # [40, 30, 20, 20, 10]
+
+    scores_sorted = sorted(scores, reverse=False) # 非破壊的
+    print(scores) # [40, 30, 20, 20, 10]
+    print(scores_sorted) # [10, 20, 20, 30, 40]
+
+def practice_08():
+    print("practice_08")
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    nums[2:5] = [200, 300, 400]
+    print(nums) # [0, 1, 200, 300, 400, 5, 6, 7, 8, 9]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    nums[2:2] = [1.5]
+    print(nums) # [0, 1, 1.5, 2, 3, 4, 5, 6, 7, 8, 9]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    nums[:3] = []
+    print(nums) # [3, 4, 5, 6, 7, 8, 9]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    nums[3:] = []
+    print(nums) # [0, 1, 2]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sliced_list = nums[2:5]
+    print(nums) # [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    print(sliced_list) # [2, 3, 4]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sliced_list = nums[2:8:2]
+    print(sliced_list) # [2, 4, 6]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sliced_list = nums[8:2:-2]
+    print(sliced_list) # [8, 6, 4]
+
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sliced_list = nums[::2]
+    print(sliced_list) # [0, 2, 4, 6, 8]
+
+    nums = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+    sliced_list = nums[::-1]
+    print(sliced_list) # [9, 8, 7, 6, 5, 4, 3, 2, 1, 0]
+
+def practice_10():
+    print("practice_10")
+
+    prices = [100, 200, 150, 200, 100]
+
+    for price in prices:
+        print(price * 1.1)
+
+    for index, price in enumerate(prices):
+        print(f"{index}: {price *1.1:.2f}")
+
+
 def run():
     print("data_struct.py")
     # practice_02()
     # practice_06()
-    practice_07()
+    # practice_07()
+    # practice_08()
+    practice_10()
+
 
 if __name__ == "__main__":
     run()
