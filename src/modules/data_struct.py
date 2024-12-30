@@ -317,6 +317,65 @@ def practice_20():
     print(eng_members_set - math_members_set) # 差集合
     print(math_members_set - eng_members_set) # 差集合
 
+def practice_22():
+    print("practice_22")
+
+    nums = [10, 20, 30]
+    # nums_copy = nums # 参照渡し（値のコピーはされない）
+    nums_copy = nums.copy()
+    nums[0] = 100
+
+    print(nums) # [100, 20, 30]
+    print(nums_copy) # [10, 20, 30]
+
+def practice_23():
+    print("practice_23")
+
+    keys = ["math", "english", "physics"]
+    values = [62, 91, 84]
+
+    scores = {}
+
+    # for item in zip(keys, values):
+    #     print(item)
+    #     key, value = item
+    #     scores[key] = value
+
+    # for key, value in zip(keys, values):
+    #     scores[key] = value
+
+    scores = {key: value for key, value in zip(keys, values)}
+
+    print(scores)
+
+def practice_24():
+    print("practice_24")
+
+    scores = [
+        {"name": "Taro", "math": 70, "english": 82},
+        {"name": "Jiro", "math": 67, "english": 61},
+        {"name": "Saburo", "math": 81, "english": 58},
+        ]
+    
+    # def compare(score):
+    #     return score["math"]
+    
+    # scores.sort(key=compare, reverse=True)
+    
+    scores.sort(key=lambda score: score["math"], reverse=True)
+
+
+
+    print("Name     Math     English")
+    print("-------- -------- --------")
+
+    for score in scores:
+        print(f"{score['name']:8} {score['math']:8} {score['english']:8}")
+
+        # for value in score.values():
+        #     print(f"{value:8} ", end="")
+        # print()
+
 
 
 def run():
@@ -333,8 +392,10 @@ def run():
     # practice_17()
     # practice_18()
     # practice_19()
-    practice_20()
-
+    # practice_20()
+    # practice_22()
+    # practice_23()
+    practice_24()
 
 if __name__ == "__main__":
     run()
