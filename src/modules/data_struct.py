@@ -317,6 +317,16 @@ def practice_20():
     print(eng_members_set - math_members_set) # 差集合
     print(math_members_set - eng_members_set) # 差集合
 
+def practice_22():
+    print("practice_22")
+
+    nums = [10, 20, 30]
+    # nums_copy = nums # 参照渡し（値のコピーはされない）
+    nums_copy = nums.copy()
+    nums[0] = 100
+
+    print(nums) # [100, 20, 30]
+    print(nums_copy) # [10, 20, 30]
 
 
 def run():
@@ -333,7 +343,9 @@ def run():
     # practice_17()
     # practice_18()
     # practice_19()
-    practice_20()
+    # practice_20()
+    practice_22()
+
 
 
 if __name__ == "__main__":
