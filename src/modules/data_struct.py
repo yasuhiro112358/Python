@@ -285,6 +285,38 @@ def practice_18():
 def practice_19():
     print("practice_19")
 
+    # 集合
+    members = {"Taro", "Jiro", "Saburo", "Taro"}
+    print(members) # {'Jiro', 'Taro', 'Saburo'}
+    print(len(members)) # 3
+    print("Jiro" in members) # True
+
+    members.add("Shiro")
+    print(members) # {'Jiro', 'Taro', 'Shiro', 'Saburo'}
+
+    members.remove("Taro")
+    print(members) # {'Jiro', 'Shiro', 'Saburo'}
+
+    frozen_members = frozenset(members)
+    print(frozen_members) # frozenset({'Jiro', 'Shiro', 'Saburo'})
+
+def practice_20():
+    print("practice_20")
+
+    # リスト
+    eng_members_list = ["Taro", "Jiro", "Saburo"]
+    math_members_list = ["Jiro", "Saburo", "Shiro"]
+
+    # リストから集合に変換
+    eng_members_set = set(eng_members_list)
+    math_members_set = set(math_members_list)
+
+    # 集合の演算
+    print(eng_members_set | math_members_set) # 和集合
+    print(eng_members_set & math_members_set) # 積集合
+    print(eng_members_set - math_members_set) # 差集合
+    print(math_members_set - eng_members_set) # 差集合
+
 
 
 def run():
@@ -300,7 +332,8 @@ def run():
     # practice_15()
     # practice_17()
     # practice_18()
-    practice_19()
+    # practice_19()
+    practice_20()
 
 
 if __name__ == "__main__":
