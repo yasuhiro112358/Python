@@ -1,11 +1,7 @@
 from modules import data_struct
 
 def main():
-    print("Hello World!")
-
-    data_struct.practice_function()
-
-
+    data_struct.run()
 
 if __name__ == "__main__":
     main()
