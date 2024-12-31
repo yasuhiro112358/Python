@@ -4,6 +4,7 @@ from math import pi as PI
 from math import e as E
 import datetime
 import calendar
+import os
 
 def practice_02():
     print("practice_02")
@@ -125,6 +126,26 @@ def practice_09():
     print(calendar.isleap(2000)) # True
     print(calendar.isleap(2001)) # False
 
+def practice_10():
+    print("practice_10")
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    # f = open(file_path, mode="w")
+    # f.write("Taro\n")
+    # f.close()
+
+    with open(file_path, mode="w") as f: # withブロックを抜けると自動的にcloseされる
+        f.write("Taro\n")
+        f.write("Jiro\n")
+        f.write("Saburo\n")
+
+
+
 def run():
     print("std_lib.py")
 
@@ -133,10 +154,9 @@ def run():
     # practice_04()
     # practice_06()
     # practice_08()
-    practice_09()
+    # practice_09()
+    practice_10()
 
-
-    # practice_10()
     # practice_11()
     # practice_12()
     # practice_13()
