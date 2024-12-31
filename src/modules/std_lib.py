@@ -162,6 +162,33 @@ def practice_11():
     except FileExistsError:
         print("File exists!")
 
+def practice_12():
+    print("practice_12")
+
+    names = ["Taro", "Jiro", "Saburo", "Shiro", "Goro"]
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    with open(file_path, mode="a") as f:
+        for name in names:
+            f.write(f"{name}\n")
+
+def practice_13():
+    print("practice_13")
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    with open(file_path, mode="r") as f:
+        names = f.read()
+        print(names)
+        
+    with open(file_path, mode="r") as f:
+        names = f.read().splitlines()
+        print(names)
+    
+
 
 def run():
     print("std_lib.py")
@@ -173,10 +200,10 @@ def run():
     # practice_08()
     # practice_09()
     # practice_10()
-    practice_11()
-
+    # practice_11()
     # practice_12()
-    # practice_13()
+    practice_13()
+
     # practice_15()
     # practice_17()
     # practice_18()
