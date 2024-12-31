@@ -144,6 +144,23 @@ def practice_10():
         f.write("Jiro\n")
         f.write("Saburo\n")
 
+def practice_11():
+    print("practice_11")
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    # if not os.path.isfile(file_path): # ファイルが存在しない場合
+    #     with open(file_path, mode="w") as f:
+    #         f.write("Saburo\n")
+    # else: 
+    #     print("File exists!")
+
+    try:
+        with open(file_path, mode="x") as f: # x: ファイルが存在しない場合のみ書き込み
+            f.write("Saburo\n")
+    except FileExistsError:
+        print("File exists!")
 
 
 def run():
@@ -155,9 +172,9 @@ def run():
     # practice_06()
     # practice_08()
     # practice_09()
-    practice_10()
+    # practice_10()
+    practice_11()
 
-    # practice_11()
     # practice_12()
     # practice_13()
     # practice_15()
