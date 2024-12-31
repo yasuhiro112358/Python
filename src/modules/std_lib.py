@@ -5,6 +5,7 @@ from math import e as E
 import datetime
 import calendar
 import os
+from pprint import pprint
 
 def practice_02():
     print("practice_02")
@@ -188,6 +189,19 @@ def practice_13():
         names = f.read().splitlines()
         print(names)
     
+def practice_14():
+    print("practice_14")
+
+    scores = [
+        {"name": "Taro", "math": 70, "english": 82},
+        {"name": "Jiro", "math": 67, "english": 61},
+        {"name": "Saburo", "math": 81, "english": 58},
+        ]
+    print(scores)
+    pprint(scores) # pretty print
+
+
+
 
 
 def run():
@@ -202,7 +216,8 @@ def run():
     # practice_10()
     # practice_11()
     # practice_12()
-    practice_13()
+    # practice_13()
+    practice_14()
 
     # practice_15()
     # practice_17()
