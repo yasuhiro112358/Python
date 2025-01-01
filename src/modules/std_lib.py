@@ -7,7 +7,7 @@ import calendar
 import os
 from pprint import pprint
 from collections import defaultdict
-
+from collections import Counter
 
 def practice_02():
     print("practice_02")
@@ -232,6 +232,36 @@ def practice_15():
 def practice_17():
     print("practice_17")
 
+    results = ["pass", "fail", "pass", "fail", "pass", "fail", "pass", "fail", "pass", "pass"]
+    stats = Counter(results)
+
+    print(dict(stats))
+
+def practice_18():
+    print("practice_18")
+
+    results = [
+        ("pass", "Taro"),
+        ("fail", "Jiro"),
+        ("pass", "Saburo"),
+        ("fail", "Shiro"),
+        ("pass", "Goro"),
+        ("fail", "Rokuro"),
+        ("pass", "Shichiro"),
+        ("fail", "Hachiro"),
+        ("pass", "Kuro"),
+        ("pass", "Juro"),
+    ]
+
+    stats = defaultdict(list)
+
+    for result, name in results:
+        stats[result].append(name)
+
+    print(dict(stats))
+
+def practice_19():
+    print("practice_19")
 
 
 def run():
@@ -249,14 +279,9 @@ def run():
     # practice_13()
     # practice_14()
     # practice_15()
-    practice_17()
-
+    # practice_17()
     # practice_18()
-    # practice_19()
-    # practice_20()
-    # practice_22()
-    # practice_23()
-    # practice_24()
-
+    practice_19()
+    
 if __name__ == "__main__":
     run()
