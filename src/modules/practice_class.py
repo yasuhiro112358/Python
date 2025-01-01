@@ -25,17 +25,23 @@ def practice_03():
     print("practice_03")
 
     posts = [
-        Post("Hello", 3),
-        Post("Hi", 5),
+        Post("Hello"),
+        Post("Hi"),
     ]
 
-    print(posts[0].text)
-    print(posts[0].likes)
-    print(posts[1].text)
-    print(posts[1].likes)
+    posts[0].like()
+    posts[0].like()
 
-    posts[0].show()
-    posts[1].show()
+    for post in posts:
+        post.show()
+
+    # posts[0].set_likes(100)
+    # print(posts[0].get_likes())
+
+    posts[0].likes = 100
+    print(posts[0].likes)
+
+    Post.show_count()
 
 
 def run():
