@@ -28,11 +28,12 @@ def practice_03():
     posts = [
         Post("Hello"),
         Post("Hi"),
-        SponsoredPost("Hey")
+        SponsoredPost("Hey", "dotinstall")
     ]
 
     posts[0].like()
     posts[0].like()
+    posts[2].like()
 
     for post in posts:
         post.show()
