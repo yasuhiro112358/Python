@@ -8,6 +8,7 @@ import os
 from pprint import pprint
 from collections import defaultdict
 from collections import Counter
+import copy
 
 def practice_02():
     print("practice_02")
@@ -263,6 +264,17 @@ def practice_18():
 def practice_19():
     print("practice_19")
 
+    nums = [10, 20, 30, [40, 50]]
+
+    # nums_bak = nums.copy()
+    # nums[3][0] = 100
+    # print(nums) # [10, 20, 30, [100, 50]]
+    # print(nums_bak) # [10, 20, 30, [100, 50]]
+
+    nums_deepcopy = copy.deepcopy(nums)
+    nums[3][0] = 100
+    print(nums) # [10, 20, 30, [100, 50]]
+    print(nums_deepcopy) # [10, 20, 30, [40, 50]]
 
 def run():
     print("std_lib.py")
