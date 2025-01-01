@@ -1,4 +1,5 @@
 from modules.classes.post import Post
+from modules.classes.sponsored_post import SponsoredPost
 from pprint import pprint
 
 def practice_02():
@@ -27,6 +28,7 @@ def practice_03():
     posts = [
         Post("Hello"),
         Post("Hi"),
+        SponsoredPost("Hey")
     ]
 
     posts[0].like()
@@ -42,6 +44,8 @@ def practice_03():
     print(posts[0].likes)
 
     Post.show_count()
+
+
 
 
 def run():
