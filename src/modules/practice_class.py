@@ -1,5 +1,6 @@
 from modules.classes.post import Post
 from modules.classes.sponsored_post import SponsoredPost
+from modules.classes.html_helper import HtmlHelper
 from pprint import pprint
 
 def practice_02():
@@ -46,6 +47,9 @@ def practice_03():
 
     Post.show_count()
 
+    # Static Methodの呼び出し
+    print(HtmlHelper.to_h1("Hello"))
+    print(HtmlHelper.to_p("Wow"))
 
 
 
