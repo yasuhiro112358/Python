@@ -6,6 +6,8 @@ import datetime
 import calendar
 import os
 from pprint import pprint
+from collections import defaultdict
+
 
 def practice_02():
     print("practice_02")
@@ -200,7 +202,35 @@ def practice_14():
     print(scores)
     pprint(scores) # pretty print
 
+def practice_15():
+    print("practice_15")
 
+    results = ["pass", "fail", "pass", "fail", "pass", "fail", "pass", "fail", "pass", "pass"]
+
+    # stats = {}
+    # for result in results:
+    #     if result not in stats:
+    #         stats[result] = 0
+    #     stats[result] += 1
+
+
+    # def init():
+    #     return 0
+        
+    # stats = defaultdict(init) # 初期値を設定
+    # for result in results:
+    #     stats[result] += 1
+
+    
+    stats = defaultdict(lambda: 0) # 初期値を設定
+    for result in results:
+        stats[result] += 1
+
+
+    print(dict(stats))
+
+def practice_17():
+    print("practice_17")
 
 
 
@@ -217,10 +247,10 @@ def run():
     # practice_11()
     # practice_12()
     # practice_13()
-    practice_14()
-
+    # practice_14()
     # practice_15()
-    # practice_17()
+    practice_17()
+
     # practice_18()
     # practice_19()
     # practice_20()
