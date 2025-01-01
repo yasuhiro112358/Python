@@ -4,6 +4,11 @@ from math import pi as PI
 from math import e as E
 import datetime
 import calendar
+import os
+from pprint import pprint
+from collections import defaultdict
+from collections import Counter
+import copy
 
 def practice_02():
     print("practice_02")
@@ -125,6 +130,152 @@ def practice_09():
     print(calendar.isleap(2000)) # True
     print(calendar.isleap(2001)) # False
 
+def practice_10():
+    print("practice_10")
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    # f = open(file_path, mode="w")
+    # f.write("Taro\n")
+    # f.close()
+
+    with open(file_path, mode="w") as f: # withブロックを抜けると自動的にcloseされる
+        f.write("Taro\n")
+        f.write("Jiro\n")
+        f.write("Saburo\n")
+
+def practice_11():
+    print("practice_11")
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    # if not os.path.isfile(file_path): # ファイルが存在しない場合
+    #     with open(file_path, mode="w") as f:
+    #         f.write("Saburo\n")
+    # else: 
+    #     print("File exists!")
+
+    try:
+        with open(file_path, mode="x") as f: # x: ファイルが存在しない場合のみ書き込み
+            f.write("Saburo\n")
+    except FileExistsError:
+        print("File exists!")
+
+def practice_12():
+    print("practice_12")
+
+    names = ["Taro", "Jiro", "Saburo", "Shiro", "Goro"]
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    with open(file_path, mode="a") as f:
+        for name in names:
+            f.write(f"{name}\n")
+
+def practice_13():
+    print("practice_13")
+
+    output_dir = os.path.join(os.path.dirname(__file__), "../../output")
+    file_path =  os.path.join(output_dir, "names.txt")
+
+    with open(file_path, mode="r") as f:
+        names = f.read()
+        print(names)
+        
+    with open(file_path, mode="r") as f:
+        names = f.read().splitlines()
+        print(names)
+    
+def practice_14():
+    print("practice_14")
+
+    scores = [
+        {"name": "Taro", "math": 70, "english": 82},
+        {"name": "Jiro", "math": 67, "english": 61},
+        {"name": "Saburo", "math": 81, "english": 58},
+        ]
+    print(scores)
+    pprint(scores) # pretty print
+
+def practice_15():
+    print("practice_15")
+
+    results = ["pass", "fail", "pass", "fail", "pass", "fail", "pass", "fail", "pass", "pass"]
+
+    # stats = {}
+    # for result in results:
+    #     if result not in stats:
+    #         stats[result] = 0
+    #     stats[result] += 1
+
+
+    # def init():
+    #     return 0
+        
+    # stats = defaultdict(init) # 初期値を設定
+    # for result in results:
+    #     stats[result] += 1
+
+    
+    stats = defaultdict(lambda: 0) # 初期値を設定
+    for result in results:
+        stats[result] += 1
+
+
+    print(dict(stats))
+
+def practice_17():
+    print("practice_17")
+
+    results = ["pass", "fail", "pass", "fail", "pass", "fail", "pass", "fail", "pass", "pass"]
+    stats = Counter(results)
+
+    print(dict(stats))
+
+def practice_18():
+    print("practice_18")
+
+    results = [
+        ("pass", "Taro"),
+        ("fail", "Jiro"),
+        ("pass", "Saburo"),
+        ("fail", "Shiro"),
+        ("pass", "Goro"),
+        ("fail", "Rokuro"),
+        ("pass", "Shichiro"),
+        ("fail", "Hachiro"),
+        ("pass", "Kuro"),
+        ("pass", "Juro"),
+    ]
+
+    stats = defaultdict(list)
+
+    for result, name in results:
+        stats[result].append(name)
+
+    print(dict(stats))
+
+def practice_19():
+    print("practice_19")
+
+    nums = [10, 20, 30, [40, 50]]
+
+    # nums_bak = nums.copy()
+    # nums[3][0] = 100
+    # print(nums) # [10, 20, 30, [100, 50]]
+    # print(nums_bak) # [10, 20, 30, [100, 50]]
+
+    nums_deepcopy = copy.deepcopy(nums)
+    nums[3][0] = 100
+    print(nums) # [10, 20, 30, [100, 50]]
+    print(nums_deepcopy) # [10, 20, 30, [40, 50]]
+
 def run():
     print("std_lib.py")
 
@@ -133,21 +284,16 @@ def run():
     # practice_04()
     # practice_06()
     # practice_08()
-    practice_09()
-
-
+    # practice_09()
     # practice_10()
     # practice_11()
     # practice_12()
     # practice_13()
+    # practice_14()
     # practice_15()
     # practice_17()
     # practice_18()
-    # practice_19()
-    # practice_20()
-    # practice_22()
-    # practice_23()
-    # practice_24()
-
+    practice_19()
+    
 if __name__ == "__main__":
     run()
